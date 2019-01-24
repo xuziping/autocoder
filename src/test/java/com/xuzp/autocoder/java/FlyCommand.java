@@ -20,5 +20,11 @@ public class FlyCommand {
         FileClassLoader ncl1 = new FileClassLoader("D://");
         Class pp = ncl1.loadClass("TestFly");
         log.info("{}", pp);
+
+        FileUtils.writeStringToFile(xx, "public class TestFly{\n public static int aaa=0;\n}", "UTF-8");
+        Runtime.getRuntime().exec("javac D://TestFly.java");
+        Class pp2 = ncl1.loadClass("TestFly");
+        log.info("{}", pp2);
+
     }
 }
