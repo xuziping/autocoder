@@ -16,6 +16,7 @@ public class FlyCommand {
     public static void main(String[] args) throws Exception{
         File xx = new File("D://TestFly.java");
         FileUtils.writeStringToFile(xx, "public class TestFly{}", "UTF-8");
+        
         Runtime.getRuntime().exec("javac D://TestFly.java");
         FileClassLoader ncl1 = new FileClassLoader("D://");
         Class pp = ncl1.loadClass("TestFly");
